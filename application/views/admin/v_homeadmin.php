@@ -15,34 +15,18 @@
     <link rel="stylesheet" href="assets/css/style.css">
 
 
-    <title>Hanif_Official</title>
+    <title>SJAH-Admin</title>
   </head>
   <body>
-     <div class="container base">
-  <div class="container">
-      <div class="row " style=" box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); padding: 1px;"  >
-        <div class="col-md-3">
-         <a href="<?php base_url() ?>">
-           <img src="<?php base_url() ?>assets/image/logo.png" width="260px" height="70px" style="margin-top:25px;">
-         </a>
-        </div>
-        <div class="col-md-3">
-        </div>
-      </div>
-  </div>
-
      <?php $this->load->view('header');?>
 
+     
+
+
+<!-- 
      <marquee class="textjalan"> Selamat Datang di SJA-H Online  ||  SJA-H Online adalah sebuah Sistem Informasi Statistik Jasa Akomodasi Hotel berbasis Web  </marquee>
-     <!-- 
          
-    <div class="jumbotron text-center">
-        <div class="container">
-        <img class="foto" src="assets/image/Hanif.jpg" class="rounded-circle"> 
-        <h1 class="namaprofil"> Hanif Abdillah </h1>
-        <p class="prodi"> Mahasiswa Informatika </p>
-        </div>
-    </div>
+    
     -->
 
 

@@ -1,8 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class c_home extends CI_Controller {
+class c_homeuser extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('v_home');
+		$this->load->view('Pengguna/v_beranda');
 	}
 }
