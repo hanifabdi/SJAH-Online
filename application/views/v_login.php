@@ -44,7 +44,7 @@
               <div class="col-lg-6 d-none d-lg-block ">
                 <h4 style="margin-top: 25px; margin-left: 180px; font-family: viga; font-style: black;">FORM LOGIN </h4>
                 <p style="margin-left: 130px;"><em>"Make sure your account is secure!"</em></p>
-                <img src="assets/image/hotel.png" width="420px"; height="260px"; style="margin-top: 5px; margin-left: 40px;"  >
+                <img src="assets/image/hotel.png" width="420px"; height="260px"; style="margin-top: 5px; margin-left: 30px;"  >
               </div>
     
               <div class="col-lg-6" >
@@ -54,13 +54,19 @@
                     <h1 class="h5 text-gray-900 mb-4" style="font-family: viga;">Badan Pusat Statistik <br> Kota Bandar Lampung</h1>
                     
                   </div>
-                  <form class="user">
+
+                  <?= $this->session->flashdata('message'); ?>
+                  
+                  <form class="user" method="post" action="<?=base_url(); ?>">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Nama pengguna">
+                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Nama pengguna" value="<?= set_value('username')?>">
+                      <?=form_error('username','<small class="text-danger pl-3">','</small>');?>
                     </div>
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Kata sandi">
+                      <?=form_error('password','<small class="text-danger pl-3">','</small>');?>
                       
+          
                     </div>
 
 
