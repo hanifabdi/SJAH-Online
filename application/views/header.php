@@ -1,6 +1,7 @@
+
 <div class="container base">
-  <div class="container">
-      <div class="row " style=" box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); padding: 1px;"  >
+  <div class="container bg-white">
+      <div class="row " style=" box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.5); padding: 1px; border: 3px solid white;"  >
         <div class="col-md-3">
          <a href="<?php base_url() ?>">
            <img src="<?php base_url() ?>assets/image/logo.png" width="350px" height="70px" style="margin-top:20px; margin-bottom:10px;" >

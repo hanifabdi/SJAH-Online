@@ -32,14 +32,15 @@ class c_login extends CI_Controller {
 		$password = $this->input->post('password');
 
 		$admin = $this->db->get_where('admin', ['username' => $username])->row_array();
-		$user = $this->db->get_where('pengguna', ['username' => $username])->row_array();
+		$user = $this->db->get_where('pengguna', ['user' => $username])->row_array();
 
 		if ($admin)
 		{
 			if ($password == $admin['password'])
 			{
 				$data = [
-					'username' => 'admin',['username']
+					'username' => $admin['username'],
+					
 				];
 				$this->session->set_userdata($data);
 				redirect('c_homeadmin');
@@ -56,10 +57,10 @@ class c_login extends CI_Controller {
 			if ($password == $user['password'])
 			{
 				$data = [
-					'username' => 'pengguna',['username']
+					'username' => $user['user']
 				];
 				$this->session->set_userdata($data);
-				$this->load->view('Pengguna/v_beranda');
+				redirect('c_homeuser');
 			}
 			else 
 			{
@@ -79,7 +80,7 @@ class c_login extends CI_Controller {
 	public function logout () 
 	{
 		$this->session->unset_userdata('username');
-		$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Logout berhasil! </div>');
+		$this->session->set_flashdata('message','<div class="alert alert-success" role="alert"> Berhasil Keluar! </div>');
 			redirect(base_url());
 	}
 }
