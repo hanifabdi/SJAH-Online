@@ -9,6 +9,13 @@ class c_login extends CI_Controller {
 	}
 	public function index()
 	{
+		// Cek apakah sudah login atau belum?
+		if ($this->session->userdata('username')) {
+			redirect('c_block');
+		}
+			
+	
+		
 		$this->form_validation->set_rules('username','Username','trim|required', [
 
 			'required' => 'Username Tidak Boleh Kosong!'
@@ -32,7 +39,8 @@ class c_login extends CI_Controller {
 		$password = $this->input->post('password');
 
 		$admin = $this->db->get_where('admin', ['username' => $username])->row_array();
-		$user = $this->db->get_where('pengguna', ['user' => $username])->row_array();
+		$hotel = $this->db->get_where('hotel', ['user' => $username])->row_array();
+
 
 		if ($admin)
 		{
@@ -40,6 +48,7 @@ class c_login extends CI_Controller {
 			{
 				$data = [
 					'username' => $admin['username'],
+
 					
 				];
 				$this->session->set_userdata($data);
@@ -52,12 +61,12 @@ class c_login extends CI_Controller {
 			}
 		}
 
-		else if ($user)
+	 else if ($hotel)
 		{
-			if ($password == $user['password'])
+			if ($password == $hotel['password'])
 			{
 				$data = [
-					'username' => $user['user']
+					'username' => $hotel['user']
 				];
 				$this->session->set_userdata($data);
 				redirect('c_homeuser');

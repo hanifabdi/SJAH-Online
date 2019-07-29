@@ -59,7 +59,7 @@
                   
                   <form class="user" method="post" action="<?=base_url(); ?>">
                     <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Nama pengguna" value="<?= set_value('username')?>"><i class="fa fa-user"></i>
+                      <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Nama pengguna" value="<?= set_value('username')?>">
                       <?=form_error('username','<small class="text-danger pl-3">','</small>');?>
                     </div>
                     <div class="form-group">

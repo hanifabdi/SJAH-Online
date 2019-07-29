@@ -28,11 +28,11 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('c_homeadmin')?>">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('c_homeuser')?>">
         <div class="sidebar-brand-icon">
           <i class="fas fa-hotel"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SJAH-Admin</div>
+        <div class="sidebar-brand-text mx-3">SJAH-User</div>
       </a>
 
       <!-- Divider -->
@@ -40,43 +40,29 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= base_url('c_homeadmin');?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+        <a class="nav-link" href="<?= base_url('c_homeuser');?>">
+          <i class="fas fa-fw fa-home"></i>
+          <span>Beranda</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider"style="margin-top: 10px;">
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - upload -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-desktop"></i>
-          <span>Monitoring Pengguna</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('c_admin_daftaradmin');?>">Data Admin</a>
-            <a class="collapse-item" href="<?= base_url('c_admin_daftarhotel');?>">Data Hotel</a>
-          </div>
-        </div>
+        <a class="nav-link" href="<?= base_url('c_user_upload');?>">
+          <i class="fas fa-fw fa-file-excel"></i>
+          <span>Upload Berkas</span></a>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block" style="margin-top: 10px; padding-top: 10px;">
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - History -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseberkas" aria-expanded="true" aria-controls="collapseberkas">
-          <i class="fas fa-desktop"></i>
-          <span>Monitoring Berkas</span>
-        </a>
-        <div id="collapseberkas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('c_admin_daftarsurvei');?>">Data Survei</a>
-            <a class="collapse-item" href="<?= base_url('c_admin_daftararsip');?>">Data Arsip</a>
-          </div>
-        </div>
+        <a class="nav-link" href="<?= base_url('c_user_history');?>">
+          <i class="fas fa-fw fa-history"></i>
+          <span>Riwayat Pengiriman</span></a>
       </li>
 
       <!-- Divider -->
@@ -112,16 +98,16 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white small"><?= $admin['nama_admin'] ;?></span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/') . $admin['foto']; ?>">
+                <span class="mr-2 d-none d-lg-inline text-white small"><?= $hotel['nama_hotel'] ;?></span>
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/') . $hotel['foto']; ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url('c_admin_profiladmin') ?>">
+                <a class="dropdown-item" href="<?= base_url('c_user_profiluser') ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profil Saya
                 </a>
-                <a class="dropdown-item" href="<?= base_url('c_admin_editprofil') ?>">
+                <a class="dropdown-item" href="<?= base_url('c_user_editprofil') ?>">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Edit Profil
                 </a>
