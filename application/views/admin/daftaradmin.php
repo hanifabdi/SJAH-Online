@@ -48,7 +48,7 @@
                       </tr>
                     <?php endif; ?>
                   <?php foreach ($data_admin as $data_admin): ?>
-                  <tr style="color: black;font-family: Viga;">
+                  <tr style="color: black;font-family: Viga; text-align: center;">
                     <td>
                       <?= $data_admin->nip ?>
                     </td>

@@ -26,7 +26,7 @@
                   </thead>
                   <tbody>
                   <?php $i=1; foreach ($data_kuesioner as $data_kuesioner): ?>
-                  <tr style="color: black;font-family: Viga;">
+                  <tr style="color: black;font-family: Viga; text-align: center;">
                     <td >
                       <?= $i++ ?>
                     </td>

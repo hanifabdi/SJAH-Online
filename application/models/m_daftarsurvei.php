@@ -22,8 +22,8 @@ class m_daftarsurvei extends CI_model
              
         }
         
-        $this->db->order_by('bulan','DESC');
         $this->db->order_by('tahun','DESC');
+        $this->db->order_by('bulan','DESC');
        return $this->db->get('berkas',$limit,$start)->result();
     }
      public function countAlluser()

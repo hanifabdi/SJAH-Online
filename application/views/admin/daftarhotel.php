@@ -47,7 +47,7 @@
                       </tr>
                     <?php endif; ?>
                   <?php foreach ($data_hotel as $data_hotel): ?>
-                  <tr style="color: black; font-family: Viga;">
+                  <tr style="color: black; font-family: Viga; text-align: center;">
                     <td >
                       <?= $data_hotel->nama_responden ?>
                     </td>
