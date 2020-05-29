@@ -8,12 +8,29 @@ class c_admin_daftarhotel extends CI_Controller {
         parent::__construct();
         $this->load->model("m_daftarhotel");
         $this->load->library('form_validation');
+
+
+         if (!$this->session->userdata('username_admin')) 
+        {
+            redirect('c_login');
+        }
+        else 
+        {
+
+           $admin1 = $this->session->userdata('username_admin')=='admin1';
+            if (!$admin1)
+            {
+                redirect('c_block');
+            }
+            
+           
+        }
     }
  
     public function index(){
 
 
-    	$data['admin'] = $this->db->get_where('admin',['username'=>$this->session->userdata('username')])->row_array();
+    	$data['admin'] = $this->db->get_where('admin',['username'=>$this->session->userdata('username_admin')])->row_array();
 
         //Pagination
         $this->load->library('pagination');
@@ -22,19 +39,19 @@ class c_admin_daftarhotel extends CI_Controller {
 
         if ($this->input->post('submit')) 
         {
-            $data['cari'] = $this->input->post('cari');
-            $this->session->set_userdata('cari',$data['cari']);
+            $data['carihotel'] = $this->input->post('carihotel');
+            $this->session->set_userdata('carihotel',$data['carihotel']);
         }
         else
         {
-            $data['cari'] = $this->session->userdata('cari');
+            $data['carihotel'] = $this->session->userdata('carihotel');
         }
 
 
         //config
 
-        $this->db->like('nama_responden',$data['cari']);
-        $this->db->or_like('nama_hotel',$data['cari']);
+        $this->db->like('nama_responden',$data['carihotel']);
+        $this->db->or_like('nama_hotel',$data['carihotel']);
         $this->db->from('hotel');
         $config['base_url']= 'http://localhost/SJAH-Online/c_admin_daftarhotel/index';
         $config['total_rows']= $this->db->count_all_results();
@@ -49,7 +66,7 @@ class c_admin_daftarhotel extends CI_Controller {
 		if ($data['admin'] && $this->form_validation->run()== false) 
 		{
             $data["start"] = $this->uri->segment(3);
-            $data["data_hotel"] = $this->m_daftarhotel->getdata($config['per_page'], $data['start'], $data['cari']);
+            $data["data_hotel"] = $this->m_daftarhotel->getdata($config['per_page'], $data['start'], $data['carihotel']);
             $data['konten'] = "admin/daftarhotel";
             $this->load->view('admin/v_homeadmin', $data);
         }	
@@ -67,7 +84,7 @@ class c_admin_daftarhotel extends CI_Controller {
 
         public function delete($user) 
         {
-            if ($this->session->userdata('username')=="admin1") 
+            if ($this->session->userdata('username_admin')=="admin1") 
             {
             $this->db->where('user', $user);
             $this->db->delete('hotel');
@@ -83,7 +100,7 @@ class c_admin_daftarhotel extends CI_Controller {
         }
          public function edit($username) 
         {
-            if ($this->session->userdata('username')=="admin1") 
+            if ($this->session->userdata('username_admin')=="admin1") 
             {
             $this->db->where('username', $username);
             $this->db->update('admin');

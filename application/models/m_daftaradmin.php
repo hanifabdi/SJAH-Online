@@ -7,16 +7,17 @@ class m_daftaradmin extends CI_model
     public function getAll()
     {
         return $this->db->get('admin')->result();
+        
 
     }
     
  
-    public function getdata($limit , $start , $cari = null)
+    public function getdata($limit , $start , $cariadmin = null)
     {
-        if($cari)
+        if($cariadmin)
         {
-            $this->db->like('nama_admin',$cari);
-             $this->db->or_like('nip',$cari);
+            $this->db->like('nama_admin',$cariadmin);
+             $this->db->or_like('nip',$cariadmin);
         }
        $this->db->order_by('username','ASC');
        return $this->db->get('admin',$limit,$start)->result();

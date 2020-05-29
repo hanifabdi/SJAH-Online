@@ -28,10 +28,9 @@
 
           <!-- 404 Error Text -->
           <div class="text-center">
-            <div class="error mx-auto" data-text="403" style="margin-top: 50px;">403</div>
-            <p class="lead text-gray-800 mb-5">Access Forbidden</p>
-            <p class="text-gray-500 mb-0">You have logged in!</p>
-            <p class="text-gray-500 mb-0">You don’t have permission to access!</p>
+            <div class="error mx-auto" data-text="403" style="margin-top: 50px; color: blue; font-size: 123px;">403</div>
+            <p style="font-size: 40px;" class="lead text-gray-800 mb-5">Access Forbidden</p>
+            <p style="font-size: 20px;" class="text-gray-500 mb-0">You don’t have permission to access this page!</p>
             
           </div>
 

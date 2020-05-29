@@ -11,12 +11,12 @@ class m_daftarhotel extends CI_model
     }
     
  
-    public function getdata($limit , $start , $cari = null)
+    public function getdata($limit , $start , $carihotel = null)
     {
-        if($cari)
+        if($carihotel)
         {
-            $this->db->like('nama_responden',$cari);
-             $this->db->or_like('nama_hotel',$cari);
+            $this->db->like('nama_responden',$carihotel);
+             $this->db->or_like('nama_hotel',$carihotel);
         }
        $this->db->order_by('user','ASC');
        return $this->db->get('hotel',$limit,$start)->result();

@@ -19,4 +19,20 @@ class m_dashboard extends CI_model{
         return $jum_pengguna;
         
     }
+
+    public function hitungberkas()
+    {
+        $this->db->where('tahun',date('Y'));
+        return $this->db->get('berkas')->num_rows();
+        
+    }
+
+    public function hitungbulansebelumnya()
+    {
+        $this->db->where('bulan',date('m')-1);
+        $this->db->where('tahun',date('Y'));
+        return $this->db->get('berkas')->num_rows();
+        
+    }
+
 }

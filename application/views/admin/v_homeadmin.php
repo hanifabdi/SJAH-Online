@@ -18,6 +18,9 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- font saya-->
+  <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -25,14 +28,11 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: blue;">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('c_homeadmin')?>">
-        <div class="sidebar-brand-icon">
-          <i class="fas fa-hotel"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">SJAH-Admin</div>
+        <img style="height: 50px;"class="img" src="<?= base_url('assets/image/lolo.png')?>">
       </a>
 
       <!-- Divider -->
@@ -41,8 +41,8 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('c_homeadmin');?>">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <i style="color: white;" class="fas fa-fw fa-tachometer-alt"></i>
+          <span style="font-family: Viga;">Dashboard</span></a>
       </li>
 
       <!-- Divider -->
@@ -51,13 +51,13 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-desktop"></i>
-          <span>Monitoring Pengguna</span>
+          <i style="color: white;" class="fas fa-desktop"></i>
+          <span style="font-family: Viga;">Monitoring Pengguna</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('c_admin_daftaradmin');?>">Data Admin</a>
-            <a class="collapse-item" href="<?= base_url('c_admin_daftarhotel');?>">Data Hotel</a>
+            <a style="font-family: Viga;" class="collapse-item" href="<?= base_url('c_admin_daftaradmin');?>">Data Admin</a>
+            <a style="font-family: Viga;" class="collapse-item" href="<?= base_url('c_admin_daftarhotel');?>">Data Hotel</a>
           </div>
         </div>
       </li>
@@ -68,13 +68,13 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseberkas" aria-expanded="true" aria-controls="collapseberkas">
-          <i class="fas fa-desktop"></i>
-          <span>Monitoring Berkas</span>
+          <i style="color: white;" class="fas fa-desktop"></i>
+          <span style="font-family: Viga;">Monitoring Berkas</span>
         </a>
         <div id="collapseberkas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="<?= base_url('c_admin_daftarsurvei');?>">Data Survei</a>
-            <a class="collapse-item" href="<?= base_url('c_admin_daftararsip');?>">Data Arsip</a>
+            <a style="font-family: Viga;" class="collapse-item" href="<?= base_url('c_admin_daftarkuesioner');?>">Data Kuesioner</a>
+            <a style="font-family: Viga;" class="collapse-item" href="<?= base_url('c_admin_daftarsurvei');?>">Data Survei</a>
           </div>
         </div>
       </li>
@@ -97,7 +97,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-gradient-primary topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: blue;">
 
            <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -112,22 +112,22 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white small"><?= $admin['nama_admin'] ;?></span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/') . $admin['foto']; ?>">
+                <span style="font-family: Viga; font-size: 15px;" class="mr-2 d-none d-lg-inline text-white small"><?= $admin['nama_admin'] ;?></span>
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/profil/') . $admin['foto']; ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url('c_admin_profiladmin') ?>">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_admin_profiladmin') ?>">
+                  <i style="color: black;" class="fas fa-user fa-sm fa-fw mr-2 "></i>
                   Profil Saya
                 </a>
-                <a class="dropdown-item" href="<?= base_url('c_admin_editprofil') ?>">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_admin_editprofil') ?>">
+                  <i style="color: black;" class="fas fa-cogs fa-sm fa-fw mr-2 "></i>
                   Edit Profil
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url('c_login/logout');?>" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_login/logout');?>" data-toggle="modal" data-target="#logoutModal">
+                  <i style="color: black;" class="fas fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
                   Keluar
                 </a>
               </div>
@@ -150,15 +150,17 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="footer " style=" margin-top: 190px; bottom: 0;">
+      <footer class="footer " style=" margin-top: 250px; bottom: 0;">
         <div class="container "style=" box-shadow: 0px -3px 5px 0px rgba(0,0,0,5); margin-top: 100px;">
-          <div class="copyright text-center" style="color: black; background-color:#DCDCDC; padding-top: 15px; padding-bottom:15px;">
+          <div class="copyright text-center" style="color: black; font-family: Viga; background-color:#DCDCDC; padding-top: 15px; padding-bottom:15px;">
             <h7>Badan Pusat Statistik Kota Bandar Lampung</h7>
             <br>
             <h7>Jl. Sutan Syahrir No. 30, Pahoman, Bandar Lampung, 35215.</h7>
             <h7>Telp. (0721)255980. Mailbox : bps1871@bps.go.id</h7>
             <br>
-            <h7>Copyright © 2019 | <a href="https://bandarlampungkota.bps.go.id/">Divisi Distribusi</h6>
+            <h7>Copyright © 2019</h7>
+            <br>
+            <h7>Built by © Mahasiswa Kerja Praktik <a href="http://if.itera.ac.id/">Prodi Teknik Informatika - <a href="https://www.itera.ac.id/">Institut Teknologi Sumatera</h7>
           </div>
         </div>
       </footer>
@@ -180,15 +182,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin keluar dari Halaman ini?</h5>
+          <h5 style="font-family: Viga;" class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin keluar dari Halaman ini?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Pilih Ya untuk melanjutkan!</div>
+        <div style="font-family: Viga;" class="modal-body">Pilih Ya untuk melanjutkan!</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?= base_url('c_login/logout');?>">Ya</a>
+          <button style="font-family: Viga;" class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+          <a style="font-family: Viga;" class="btn btn-primary" href="<?= base_url('c_login/logout');?>">Ya</a>
         </div>
       </div>
     </div>

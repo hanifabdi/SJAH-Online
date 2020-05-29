@@ -8,12 +8,27 @@ class c_admin_daftaradmin extends CI_Controller {
         parent::__construct();
         $this->load->model("m_daftaradmin");
         $this->load->library('form_validation');
+
+        if (!$this->session->userdata('username_admin')) 
+        {
+            redirect('c_login');
+        }
+        else 
+        {
+            $admin1 = $this->session->userdata('username_admin')=='admin1';
+            if (!$admin1)
+            {
+                redirect('c_block');
+            }
+            
+           
+        }
     }
  
     public function index(){
 
 
-    	$data['admin'] = $this->db->get_where('admin',['username'=>$this->session->userdata('username')])->row_array();
+    	$data['admin'] = $this->db->get_where('admin',['username'=>$this->session->userdata('username_admin')])->row_array();
 
         //Pagination
         $this->load->library('pagination');
@@ -22,19 +37,19 @@ class c_admin_daftaradmin extends CI_Controller {
 
         if ($this->input->post('submit')) 
         {
-            $data['cari'] = $this->input->post('cari');
-            $this->session->set_userdata('cari',$data['cari']);
+            $data['cariadmin'] = $this->input->post('cariadmin');
+            $this->session->set_userdata('cariadmin',$data['cariadmin']);
         }
         else
         {
-            $data['cari'] = $this->session->userdata('cari');
+            $data['cariadmin'] = $this->session->userdata('cariadmin');
         }
 
 
         //config
 
-        $this->db->like('nama_admin',$data['cari']);
-        $this->db->or_like('nip',$data['cari']);
+        $this->db->like('nama_admin',$data['cariadmin']);
+        $this->db->or_like('nip',$data['cariadmin']);
         $this->db->from('admin');
         $config['base_url']= 'http://localhost/SJAH-Online/c_admin_daftaradmin/index';
         $config['total_rows']= $this->db->count_all_results();
@@ -49,7 +64,7 @@ class c_admin_daftaradmin extends CI_Controller {
 		if ($data['admin'] && $this->form_validation->run()== false) 
 		{
             $data["start"] = $this->uri->segment(3);
-            $data["data_admin"] = $this->m_daftaradmin->getdata($config['per_page'], $data['start'], $data['cari']);
+            $data["data_admin"] = $this->m_daftaradmin->getdata($config['per_page'], $data['start'], $data['cariadmin']);
             $data['konten'] = "admin/daftaradmin";
             $this->load->view('admin/v_homeadmin', $data);
         }	
@@ -67,7 +82,7 @@ class c_admin_daftaradmin extends CI_Controller {
 
         public function delete($username) 
         {
-            if ($this->session->userdata('username')=="admin1") 
+            if ($this->session->userdata('username_admin')=="admin1") 
             {
             $this->db->where('username', $username);
             $this->db->delete('admin');
@@ -83,7 +98,7 @@ class c_admin_daftaradmin extends CI_Controller {
         }
          public function edit($username) 
         {
-            if ($this->session->userdata('username')=="admin1") 
+            if ($this->session->userdata('username_admin')=="admin1") 
             {
             $this->db->where('username', $username);
             $this->db->update('admin');

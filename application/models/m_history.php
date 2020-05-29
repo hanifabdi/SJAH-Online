@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class m_history extends CI_model
-{
+{ 
 	
     public function getAll()
     {
@@ -10,18 +10,15 @@ class m_history extends CI_model
 
     }
     
- 
-    public function getdata($limit , $start , $cari = null)
+   
+    public function getdata($limit , $start)
     {
-        if($cari)
-        {
-             $this->db->like('bulan',$cari);
-             $this->db->or_like('pengirim',$cari);
-             $this->db->or_like('asal_hotel',$cari);
-             $this->db->or_like('tahun',$cari);
-             
-        }
-       return $this->db->get('berkas',$limit,$start)->result();
+        $data['hotel'] = $this->db->get_where('hotel',['user'=>$this->session->userdata('username')])->row_array();
+        $asal_hotel = $data['hotel']['nama_hotel'];
+        $tahun = date('Y');
+        
+        $this->db->order_by('bulan','DESC');
+       return $this->db->get_where('berkas',$asal_hotel,$tahun,$limit,$start)->result();
     }
      public function countAlluser()
     {

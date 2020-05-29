@@ -11,15 +11,19 @@ class m_daftarsurvei extends CI_model
     }
     
  
-    public function getdata($limit , $start , $cari = null)
+    public function getdata($limit , $start , $cariberkas = null)
     {
-        if($cari)
+        if($cariberkas)
         {
-             $this->db->like('bulan',$cari);
-             $this->db->or_like('pengirim',$cari);
-             $this->db->or_like('asal_hotel',$cari);
+             $this->db->like('bulan',$cariberkas);
+             $this->db->or_like('pengirim',$cariberkas);
+             $this->db->or_like('asal_hotel',$cariberkas);
+             $this->db->or_like('tahun',$cariberkas);
              
         }
+        
+        $this->db->order_by('bulan','DESC');
+        $this->db->order_by('tahun','DESC');
        return $this->db->get('berkas',$limit,$start)->result();
     }
      public function countAlluser()

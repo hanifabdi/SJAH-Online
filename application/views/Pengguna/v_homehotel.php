@@ -18,6 +18,10 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- punya saya-->
+  <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
+  <link href="<?= base_url('assets/'); ?>css/style.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -29,10 +33,7 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('c_homeuser')?>">
-        <div class="sidebar-brand-icon">
-          <i class="fas fa-hotel"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">SJAH-User</div>
+        <img style="height: 50px;"class="img" src="<?= base_url('assets/image/lolo.png')?>">
       </a>
 
       <!-- Divider -->
@@ -41,8 +42,8 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('c_homeuser');?>">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Beranda</span></a>
+          <i class="fas fa-fw fa-home" style="color: white;"></i>
+          <span style="font-family: Viga;">Beranda</span></a>
       </li>
 
       <!-- Divider -->
@@ -51,8 +52,8 @@
       <!-- Nav Item - upload -->
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('c_user_upload');?>">
-          <i class="fas fa-fw fa-file-excel"></i>
-          <span>Upload Berkas</span></a>
+          <i class="fas fa-fw fa-file-excel" style="color: white;"></i>
+          <span style="font-family: Viga;" >Upload Berkas</span></a>
       </li>
 
       <!-- Divider -->
@@ -61,8 +62,8 @@
       <!-- Nav Item - History -->
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('c_user_history');?>">
-          <i class="fas fa-fw fa-history"></i>
-          <span>Riwayat Pengiriman</span></a>
+          <i class="fas fa-fw fa-history" style="color: white;"></i>
+          <span style="font-family: Viga;">Riwayat Pengiriman</span></a>
       </li>
 
       <!-- Divider -->
@@ -98,22 +99,22 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white small"><?= $hotel['nama_hotel'] ;?></span>
-                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/') . $hotel['foto']; ?>">
+                <span style="font-family: Viga; font-size: 15px;" class="mr-2 d-none d-lg-inline text-white small"><?= $hotel['nama_hotel'] ;?></span>
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/image/profil/') . $hotel['foto']; ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?= base_url('c_user_profiluser') ?>">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_user_profiluser') ?>">
+                  <i style="color: black;"  class="fas fa-user fa-sm fa-fw mr-2"></i>
                   Profil Saya
                 </a>
-                <a class="dropdown-item" href="<?= base_url('c_user_editprofil') ?>">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_user_editprofil') ?>">
+                  <i style="color: black;"  class="fas fa-cogs fa-sm fa-fw mr-2"></i>
                   Edit Profil
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<?= base_url('c_login/logout');?>" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                <a style="font-family: Viga;" class="dropdown-item" href="<?= base_url('c_login/logout');?>" data-toggle="modal" data-target="#logoutModal">
+                  <i style="color: black;" class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i>
                   Keluar
                 </a>
               </div>
@@ -138,13 +139,15 @@
       <!-- Footer -->
       <footer class="footer " style=" margin-top: 190px; bottom: 0;">
         <div class="container "style=" box-shadow: 0px -3px 5px 0px rgba(0,0,0,5); margin-top: 100px;">
-          <div class="copyright text-center" style="color: black; background-color:#DCDCDC; padding-top: 15px; padding-bottom:15px;">
+          <div class="copyright text-center" style="color: black; font-family: Viga; background-color:#DCDCDC; padding-top: 15px; padding-bottom:15px;">
             <h7>Badan Pusat Statistik Kota Bandar Lampung</h7>
             <br>
             <h7>Jl. Sutan Syahrir No. 30, Pahoman, Bandar Lampung, 35215.</h7>
             <h7>Telp. (0721)255980. Mailbox : bps1871@bps.go.id</h7>
             <br>
-            <h7>Copyright © 2019 | <a href="https://bandarlampungkota.bps.go.id/">Divisi Distribusi</h6>
+            <h7>Copyright © 2019</h7>
+            <br>
+            <h7>Built by © Mahasiswa Kerja Praktik <a href="http://if.itera.ac.id/">Prodi Teknik Informatika - <a href="https://www.itera.ac.id/">Institut Teknologi Sumatera</h7>
           </div>
         </div>
       </footer>
@@ -166,15 +169,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin keluar dari Halaman ini?</h5>
+          <h5 style="font-family: Viga;" class="modal-title" id="exampleModalLabel">Apakah anda yakin ingin keluar dari Halaman ini?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Pilih Ya untuk melanjutkan!</div>
+        <div style="font-family: Viga;" class="modal-body">Pilih Ya untuk melanjutkan!</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
-          <a class="btn btn-primary" href="<?= base_url('c_login/logout');?>">Ya</a>
+          <button style="font-family: Viga;" class="btn btn-secondary" type="button" data-dismiss="modal">Tidak</button>
+          <a style="font-family: Viga;" class="btn btn-primary" href="<?= base_url('c_login/logout');?>">Ya</a>
         </div>
       </div>
     </div>
